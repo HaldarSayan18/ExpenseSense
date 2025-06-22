@@ -19,9 +19,8 @@ app.use(morgan('dev')); // tiny urls
 app.use(cors());
 
 // routes
-app.get('/', (req, res)=>{
-    res.send("<h1>Hello World!</h1>")
-});
+app.use('/api/version/users', require('./routes/userRoute'));   //users route
+app.use('/api/version/transactions', require('./routes/transactionRoute'));     //transactions route
 
 // port
 const PORT = 8050 || process.env.PORT;

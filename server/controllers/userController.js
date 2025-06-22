@@ -4,7 +4,7 @@ const userModel = require('../models/userModel.js');
 const loginController = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await userModel.findOne({ email, psswor });
+        const user = await userModel.findOne({ email, password });
         if (!user) {
             return res.status(404).sned("User not found!")
         };
