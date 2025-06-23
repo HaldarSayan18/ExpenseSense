@@ -31,16 +31,14 @@ const Register = () => {
                     "Content-Type": "application/json"
                 }
             });
-            // toast.success('Registration Successful 📝', {
-            //     position: "top-center",
-            // });
-            // setTimeout(() => {
-            //     navigate('/login');
-            // }, 2000);
-            alert("Registratin successfull")
-            navigate('/login');
+            toast.success('Registration Successful 📝', {
+                position: "top-center",
+            });
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
         } catch (error) {
-            toast.error("Error!!. Please try again.", {
+            toast.error("Email already existed! Please try again.", {
                 position: "top-center"
             });
             console.log("Registration error =>", error);

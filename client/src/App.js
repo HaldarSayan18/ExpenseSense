@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <Routes>
-        {/* <Route path='/' element={<ProtectedRoutes><Homepage /></ProtectedRoutes>} /> */}
-        <Route path='/' element={<Homepage />} />
-        {/* <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} /> */}
+        <Route path='/' element={<ProtectedRoutes><Homepage /></ProtectedRoutes>} />
+        {/* <Route path='/' element={<Homepage />} /> */}
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </>
   );
@@ -19,7 +19,9 @@ function App() {
 
 export function ProtectedRoutes(props) {
   if (localStorage.getItem("user")) {
-    return props.chilfren;
+    console.log('props.chilfren ==> ',props.children);
+    return props.children;
+    
   } else {
     return <Navigate to='/login'/>
   }
