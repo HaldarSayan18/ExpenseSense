@@ -11,20 +11,20 @@ const transactionSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        require: [true, 'category is required.']
+        required: [true, 'category is required.']
     },
     reference: {
         type: String
     },
     description: {
         type: String,
-        require: [true, 'description must be given']
+        required: [true, 'description must be given']
     },
     date: {
-        type: String,
-        required: [true, 'data is required']
+        type: Date,
+        required: [true, 'date is required']
     },
 }, { timestamps: true }
 );
 
-module.exports = transactionSchema;
+module.exports = mongoose.model('Transaction', transactionSchema);
